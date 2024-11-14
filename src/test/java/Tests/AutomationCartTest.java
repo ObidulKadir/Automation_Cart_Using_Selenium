@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import Pages.CartPage;
@@ -25,13 +26,13 @@ import Pages.OrderPage;
 public class AutomationCartTest extends BaseTest {
 	WebDriver driver;
 
-	String emailField = "anshika@gmail.com";
-	String passWord = "Iamking@000";
+//	String emailField = "anshika@gmail.com";
+//	String passWord = "Iamking@000";
 	String productName = "ZARA COAT 3";
 	String countryName = "Bangladesh";
 
-	@Test
-	public void submitOrder() throws InterruptedException {
+	@Test (dataProvider = "getData", groups = {"purchase"})
+	public void submitOrder(String emailField, String passWord, String productName) throws InterruptedException {
 
 		ProductCatalogue productCatalogue = landingPage.loginApplication(emailField, passWord);
 		List<WebElement> productList = productCatalogue.getProductList();
@@ -56,5 +57,10 @@ public class AutomationCartTest extends BaseTest {
 		ProductCatalogue productCatalogue = landingPage.loginApplication("anshika@gmail.com", "Iamking@000");
 		OrderPage ordersPage= productCatalogue.goToOrdersPage();
 		Assert.assertTrue(ordersPage.VerifyOrderDisplay(productName));
+	}
+	
+	@DataProvider
+	public Object[][] getData() {
+		return new Object [][] {{"anshika@gmail.com","Iamking@000", "ZARA COAT 3"},{"shetty@gmail.com","Iamking@000","ADIDAS ORIGINAL" }};
 	}
 }

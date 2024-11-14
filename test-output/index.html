@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>D:\PersonalSpace\PracticeSpace\Selenium\AutomationCart\TestSuites\errorValidations.xml</span>
+                    <span>D:\PersonalSpace\PracticeSpace\Selenium\AutomationCart\TestSuites\purchaseOrderDataProvider.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,12 +102,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Tests.ErrorValidationsTest" class="method navigator-link" hash-for-method="LoginErrorValidation">LoginErrorValidation</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="Tests.AutomationCartTest" class="method navigator-link" hash-for-method="submitOrder(shetty@gmail.com, Iamking@000, ADIDAS ORIGINAL)">submitOrder(shetty@gmail.com, Iamking@000, ADIDAS ORIGINAL)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Tests.ErrorValidationsTest" class="method navigator-link" hash-for-method="ProductErrorValidation">ProductErrorValidation</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="Tests.AutomationCartTest" class="method navigator-link" hash-for-method="submitOrder(anshika@gmail.com, Iamking@000, ZARA COAT 3)">submitOrder(anshika@gmail.com, Iamking@000, ZARA COAT 3)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -125,21 +125,23 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Tests.ErrorValidationsTest</span>
+              <span class="class-name">Tests.AutomationCartTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="LoginErrorValidation">
-                  </a> <!-- LoginErrorValidation -->
-                  <span class="method-name">LoginErrorValidation</span>
+                  <a name="submitOrder(shetty@gmail.com, Iamking@000, ADIDAS ORIGINAL)">
+                  </a> <!-- submitOrder(shetty@gmail.com, Iamking@000, ADIDAS ORIGINAL) -->
+                  <span class="method-name">submitOrder</span>
+                  <span class="parameters">(shetty@gmail.com, Iamking@000, ADIDAS ORIGINAL)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="ProductErrorValidation">
-                  </a> <!-- ProductErrorValidation -->
-                  <span class="method-name">ProductErrorValidation</span>
+                  <a name="submitOrder(anshika@gmail.com, Iamking@000, ZARA COAT 3)">
+                  </a> <!-- submitOrder(anshika@gmail.com, Iamking@000, ZARA COAT 3) -->
+                  <span class="method-name">submitOrder</span>
+                  <span class="parameters">(anshika@gmail.com, Iamking@000, ZARA COAT 3)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -147,7 +149,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\PersonalSpace\PracticeSpace\Selenium\AutomationCart\TestSuites\errorValidations.xml</span>
+            <span class="header-content">D:\PersonalSpace\PracticeSpace\Selenium\AutomationCart\TestSuites\purchaseOrderDataProvider.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -156,7 +158,7 @@
 &lt;suite parallel=&quot;tests&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;groups&gt;
     &lt;run&gt;
-      &lt;include name=&quot;errorValidations&quot;/&gt;
+      &lt;include name=&quot;purchase&quot;/&gt;
     &lt;/run&gt;
   &lt;/groups&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Submit Order Test&quot;&gt;
@@ -194,14 +196,10 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">errorValidations</span>
+              <span class="test-group-name">purchase</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">LoginErrorValidation</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">ProductErrorValidation</span>
+                <span class="method-in-group-name">submitOrder</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -223,18 +221,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'ProductErrorValidation')
-data.setCell(0, 2, 'Tests.ErrorValidationsTest')
-data.setCell(0, 3, 4363);
+data.setCell(0, 1, 'submitOrder')
+data.setCell(0, 2, 'Tests.AutomationCartTest')
+data.setCell(0, 3, 5487);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'LoginErrorValidation')
-data.setCell(1, 2, 'Tests.ErrorValidationsTest')
-data.setCell(1, 3, 446);
+data.setCell(1, 1, 'submitOrder')
+data.setCell(1, 2, 'Tests.AutomationCartTest')
+data.setCell(1, 3, 5331);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -249,14 +247,21 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
+              <span class="ignored-class-name">Tests.ErrorValidationsTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">ProductErrorValidation</span>
+                <br/>
+                <span class="ignored-method-name">LoginErrorValidation</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
               <span class="ignored-class-name">Tests.AutomationCartTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">submitOrder</span>
-                <br/>
                 <span class="ignored-method-name">verifyOrderHistory</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
@@ -269,30 +274,30 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Tests.ErrorValidationsTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Tests.AutomationCartTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">launchApplication</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">LoginErrorValidation</span>
-                <span class="method-start">6213 ms</span>
+                <span class="method-name">submitOrder(anshika@gmail.com, Iamking@000, ZARA COAT 3)</span>
+                <span class="method-start">7461 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">6660 ms</span>
+                <span class="method-start">12792 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launchApplication</span>
-                <span class="method-start">7697 ms</span>
+                <span class="method-start">14052 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">ProductErrorValidation</span>
-                <span class="method-start">12713 ms</span>
+                <span class="method-name">submitOrder(shetty@gmail.com, Iamking@000, ADIDAS ORIGINAL)</span>
+                <span class="method-start">19112 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">17076 ms</span>
+                <span class="method-start">24600 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
