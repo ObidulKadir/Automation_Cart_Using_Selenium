@@ -1,5 +1,6 @@
 package Tests;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
@@ -35,12 +36,12 @@ public class AutomationCartTest extends BaseTest {
 	@Test(dataProvider = "getData", groups = { "purchase" })
 	public void submitOrder( HashMap<String, String> input) throws InterruptedException {
 
-		ProductCatalogue productCatalogue = landingPage.loginApplication(input.get("emailField"), input.get("passWord"));
+		ProductCatalogue productCatalogue = landingPage.loginApplication(input.get("email"), input.get("password"));
 		List<WebElement> productList = productCatalogue.getProductList();
-		productCatalogue.addProductToCart(input.get("productName"));
+		productCatalogue.addProductToCart(input.get("product"));
 		CartPage cartPage = productCatalogue.goToCartPage();
 
-		Boolean match = cartPage.VerifyProductDisplay(input.get("productName"));
+		Boolean match = cartPage.VerifyProductDisplay(input.get("product"));
 		Assert.assertTrue(match);
 
 		CheckoutPage checkOutPage = cartPage.goToCheckout();
@@ -58,23 +59,29 @@ public class AutomationCartTest extends BaseTest {
 		OrderPage ordersPage = productCatalogue.goToOrdersPage();
 		Assert.assertTrue(ordersPage.VerifyOrderDisplay(productName));
 	}
-
-	// data provider using 2d object and hashMap
+	
 	@DataProvider
-	public Object[][] getData() {
-		HashMap<String, String> data1 = new HashMap<String, String>();
-		data1.put("emailField", "anshika@gmail.com");
-		data1.put("passWord", "Iamking@000");
-		data1.put("productName", "ZARA COAT 3");
-		
-		HashMap<String, String> data2 = new HashMap<String, String>();
-		data2.put("emailField", "shetty@gmail.com");
-		data2.put("passWord", "Iamking@000");
-		data2.put("productName", "ADIDAS ORIGINAL");
-		
-		return new Object[][] {{ data1 },
-				{ data2 } };
+	public Object[][] getData() throws IOException {
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"\\src\\test\\java\\Data\\purchaseOrderJson.json");
+		return new Object[][]  {{data.get(0)}, {data.get(1) } };
 	}
+
+//	// data provider using 2d object and hashMap
+//	@DataProvider
+//	public Object[][] getData() {
+//		HashMap<String, String> data1 = new HashMap<String, String>();
+//		data1.put("emailField", "anshika@gmail.com");
+//		data1.put("passWord", "Iamking@000");
+//		data1.put("productName", "ZARA COAT 3");
+//		
+//		HashMap<String, String> data2 = new HashMap<String, String>();
+//		data2.put("emailField", "shetty@gmail.com");
+//		data2.put("passWord", "Iamking@000");
+//		data2.put("productName", "ADIDAS ORIGINAL");
+//		
+//		return new Object[][] {{ data1 },
+//				{ data2 } };
+//	}
 
 //	// data provider using 2d object
 //	@DataProvider

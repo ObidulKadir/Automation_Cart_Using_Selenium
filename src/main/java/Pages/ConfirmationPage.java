@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import AbstractComponenet.AbstractComponent;
-import rahulshettyacademy.pageobjects.CheckoutPage;
+import Pages.CheckoutPage;
 
 public class ConfirmationPage extends AbstractComponent {
 

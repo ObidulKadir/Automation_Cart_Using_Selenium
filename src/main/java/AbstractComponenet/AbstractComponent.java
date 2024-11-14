@@ -42,6 +42,9 @@ public class AbstractComponent {
 		Thread.sleep(3000);
 	}
 	
+	public void getJsonDataToMap() {
+		
+	}
 	
 	public CartPage goToCartPage()
 	{

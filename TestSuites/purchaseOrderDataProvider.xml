@@ -4,7 +4,7 @@
 
 	<groups>
 		<run>
-			<include name="purchase" />
+			<include name="purchase"/>
 		</run>
 	</groups>
 	
