@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Client]" guice-stage="DEVELOPMENT">
+  <test name="ProductCatalougeTest(failed)">
+    <classes>
+      <class name="TestCase.ProductCatalougeTest">
+        <methods>
+          <include name="CloseBrowser"/>
+          <include name="StartBrowser"/>
+          <include name="loginAndNavigateToProductDetail"/>
+          <include name="verifyProductAddedToCartAlert"/>
+        </methods>
+      </class> <!-- TestCase.ProductCatalougeTest -->
+    </classes>
+  </test> <!-- ProductCatalougeTest(failed) -->
+</suite> <!-- Failed suite [Client] -->

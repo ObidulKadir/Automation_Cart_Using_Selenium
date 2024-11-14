@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test parallel="tests" name="Error Validations Test(failed)">
+    <groups>
+      <run>
+        <include name="errorHandling"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="Tests.ErrorValidationsTest">
+        <methods>
+          <include name="LoginErrorValidation"/>
+        </methods>
+      </class> <!-- Tests.ErrorValidationsTest -->
+    </classes>
+  </test> <!-- Error Validations Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
