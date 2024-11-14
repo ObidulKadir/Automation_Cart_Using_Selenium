@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test parallel="tests" name="Error Validations Test(failed)">
+  <test parallel="tests" name="Submit Order Test(failed)">
     <groups>
       <run>
-        <include name="errorHandling"/>
+        <include name="purchase"/>
       </run>
     </groups>
     <classes>
-      <class name="Tests.ErrorValidationsTest">
+      <class name="Tests.AutomationCartTest">
         <methods>
-          <include name="LoginErrorValidation"/>
+          <include name="submitOrder" invocation-numbers="0 1"/>
+          <include name="launchApplication"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- Tests.ErrorValidationsTest -->
+      </class> <!-- Tests.AutomationCartTest -->
     </classes>
-  </test> <!-- Error Validations Test(failed) -->
+  </test> <!-- Submit Order Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
