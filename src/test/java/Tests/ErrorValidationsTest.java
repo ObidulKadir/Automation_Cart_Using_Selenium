@@ -8,18 +8,19 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import TestComponents.BaseTest;
+import TestComponents.Retry;
 import Pages.CartPage;
 import Pages.ProductCatalogue;
 
 public class ErrorValidationsTest extends BaseTest{
 	
 	
-	@Test (groups = {"errorValidations"})
+	@Test (groups = {"errorValidations"}, retryAnalyzer = Retry.class)
 	public void LoginErrorValidation() throws IOException, InterruptedException {
 
 		
 		landingPage.loginApplication("anshika@gmail.com", "Iamki000");
-		Assert.assertEquals("Incorrect email or password.", landingPage.getErrorMessage());
+		Assert.assertEquals("Incorrect email password.", landingPage.getErrorMessage());
 
 	}
 	

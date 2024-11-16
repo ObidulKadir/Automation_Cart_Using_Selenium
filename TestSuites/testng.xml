@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel = "tests" name="Suite">
-
-  <test thread-count="5" name="Submit Order Test">
-    <classes>
-      <class name="Tests.AutomationCartTest"/>
-    </classes>
-  </test> <!-- Test -->
+<suite name="Parallel Test Suite" parallel="tests" thread-count="2">
   
-  <test thread-count="5" name="Error Validations Test">
+  <!-- Add listeners for reporting -->
+  <listeners>
+    <listener class-name="TestComponents.Listeners" />
+  </listeners>
+
+  <!-- First Test Block -->
+  <test name="Submit Order Test">
     <classes>
-      <class name="Tests.ErrorValidationsTest"/>
+      <class name="Tests.AutomationCartTest" />
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test>
+  
+  <!-- Second Test Block -->
+  <test name="Error Validations Test">
+    <classes>
+      <class name="Tests.ErrorValidationsTest" />
+    </classes>
+  </test>
 
-
+</suite>

@@ -17,9 +17,12 @@ import Pages.OrderPage;
 public class AbstractComponent {
 
 	WebDriver driver;
+
 	public AbstractComponent(WebDriver driver) {
+		
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		
 	}
 	
 	@FindBy(css = "[routerlink*='cart']")
@@ -28,22 +31,19 @@ public class AbstractComponent {
 	@FindBy(css = "[routerlink*='myorders']")
 	WebElement orderHeader;
 
+
 	public void waitForElementToAppear(By findBy) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
+
 	}
 	
 	public void waitForWebElementToAppear(WebElement findBy) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOf(findBy));
-	}
-	
-	public void waitForElementToDisappear(WebElement findBy) throws InterruptedException {
-		Thread.sleep(3000);
-	}
-	
-	public void getJsonDataToMap() {
-		
+
 	}
 	
 	public CartPage goToCartPage()
@@ -59,6 +59,12 @@ public class AbstractComponent {
 		OrderPage orderPage = new OrderPage(driver);
 		return orderPage;
 	}
-	
+	public void waitForElementToDisappear(WebElement ele) throws InterruptedException
+	{
+		Thread.sleep(1000);
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+//		wait.until(ExpectedConditions.invisibilityOf(ele));
+
+	}
 	
 }
