@@ -31,6 +31,7 @@ import Pages.LandingPage;
 public class BaseTest {
 
     // ThreadLocal WebDriver to ensure thread safety
+	public WebDriver driver;
     private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
     public LandingPage landingPage;
 
