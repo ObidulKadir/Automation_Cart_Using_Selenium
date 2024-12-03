@@ -4,10 +4,23 @@
   <listeners>
     <listener class-name="TestComponents.Listeners"/>
   </listeners>
+  <test parallel="tests" name="Submit Order Test(failed)">
+    <classes>
+      <class name="Tests.AutomationCartTest">
+        <methods>
+          <include name="submitOrder" invocation-numbers="0 1"/>
+          <include name="launchApplication"/>
+          <include name="tearDown"/>
+          <include name="OrderHistoryTest"/>
+        </methods>
+      </class> <!-- Tests.AutomationCartTest -->
+    </classes>
+  </test> <!-- Submit Order Test(failed) -->
   <test parallel="tests" name="Error Validations Test(failed)">
     <classes>
       <class name="Tests.ErrorValidationsTest">
         <methods>
+          <include name="ProductErrorValidation"/>
           <include name="launchApplication"/>
           <include name="tearDown"/>
           <include name="LoginErrorValidation"/>
